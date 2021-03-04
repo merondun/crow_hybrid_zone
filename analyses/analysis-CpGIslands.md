@@ -1,5 +1,14 @@
 # ~~ CGI ~~
 
+Analyze 5mC data using GLMMs over CpG islands. 
+
+Provided we have bismark .cov files and a bed track with CpG islands, we can assign CpG island to the coverage file with this:
+```
+for i in $(ls *.CpG_5mC.cov.gz | sed 's/\..*//g'); do 
+zcat ${i}.CpG_5mC.cov.gz | bedtools intersect -a - -b cgis.bed -wa -wb | awk '{OFS="\t"}{print $7, $2, $3, $4, $5, $6, $10}' | bgzip -c > ${i}.CGI.bed.gz
+done
+```
+
 ## CG 5x
 
 ```
