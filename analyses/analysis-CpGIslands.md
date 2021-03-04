@@ -1,3 +1,9 @@
+##### Table of Contents  
+[Headers](#headers)  
+[Emphasis](#emphasis)  
+...snip...    
+<a name="headers"/>
+
 # ~~ CGI ~~
 
 Analyze 5mC data using GLMMs over CpG islands. 
